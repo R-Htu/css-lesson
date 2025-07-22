@@ -1,5 +1,4 @@
 ﻿# css-lesson
 
-Just helping students catch up with past content
-
+Refreshed old lessons to encourage practice
  
