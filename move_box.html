@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+    }
+    :root{
+      font-size: 15px;
+    }
+    #btn{
+      display: none;
+    }
+    /* 16px */
+    label{
+      background-color: lightblue;
+      font-size: 2rem;
+      position: absolute;
+      padding: 5px 35px;
+      border-radius: 8px;
+      cursor: pointer;
+      top: 200px;
+      left: 120px;
+    }
+    .ball{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.1rem;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      position: absolute;
+      background-image:radial-gradient(circle, lightgreen, lightgrey);
+      transition: all 2s ease;
+      transform: translate(150px,0)
+      
+    }
+    #btn:checked ~.ball{
+      background-color: lightcoral;
+      border-radius: 0;
+      transform: translate(550px, 400px) rotate(3600deg);
+    }
+    #frame{
+      border: 5px solid lightsteelblue;
+      width: 160px;
+      height: 160px;
+      transform: translate(540px, 390px);
+    }
+    #toggle:checked ~ .box {
+      background-color: yellow;
+    }
+    #toggle:checked ~ .test {
+      border: 1px solid red;
+    }
+    .first ~ p {
+      color: rgb(46, 240, 12);
+      background-color: lightcoral;
+    }
+    .bbox {
+  transition: transform 1s;
+}
+#bbtn:checked ~ .bbox {
+  transform: translateX(100px);
+}
+
+    /* radial-gradient(shape size at position, start color,...last-color)) */
+  </style>
+
+</head>
+<body>
+  <div class="container">
+    <input type="checkbox" id="btn">
+    <label for="btn">Change the Box</label>
+    <div class="ball">Move</div>
+    <div id="frame"></div>
+  </div>
+  <input type="checkbox" id="toggle">
+  <div class="box">add the background color</div>
+  <div class="test">add the border </div>
+  <p class="first">First</p>
+  <p>Second</p>
+  <p>Third</p>
+  <input type="checkbox" id="bbtn">
+  <div class="bbox">Watch me</div>
+  <ul style="padding: 20px;">
+    <li>apple</li>
+    <li>orange</li>
+  </ul>
+  <input type="text" id="user-name" value="fdhfdf">
+  <input type="submit" id="submit">
+  <script>
+        let ul = document.getElementsByTagName('ul')[0];
+    let submit = document.getElementById('submit');
+    submit.addEventListener('click',()=>{
+      let userName = document.getElementById('user-name').value;
+      let p = document.createElement('p');
+      p.innerHTML = userName;
+      ul.insertAdjacentElement('afterend', p);
+      let li = document.createElement('li');
+
+    li.innerHTML = userName;
+    ul.appendChild(li);
+    })
+
+    let firstName = "James"; // string
+    let surName = "Meh";//String
+    let password = "hdfdfdjhfjd847878+**#&";//string
+    let firstNumber = 10;// numbers
+    let secondNumver = 20; //numbers
+    let bool = true; //boolen =  true, false;
+    //operator +,-,*,/ 
+    let sum = firstNumber + secondNumver;
+   // alert(sum)
+    const pi = 3.14
+  //  alert('hello Wrold')
+    console.log(sum);
+    console.log(firstName+" " +surName);
+    //loop
+    let result = 0;
+    for(let i=3; i<=30; i +=3){
+      if (i>20){
+        console.log(i);
+      } 
+    }
+    let myHeight= 5;
+    if(myHeight < 6){
+      console.log("You can't be a pilot");
+    }else{
+      console.log("Yay");
+    }
+    let age = 30;
+    if (age >= 18) {
+      console.log("You are an adult.");
+    } else {
+      console.log("You are a minor.");
+    }
+    let temperature = 20;
+if (temperature > 35) {
+ console.log("It's too hot!");
+} else if (temperature >= 25) {
+   console.log("Nice weather.");
+} else if(temperature >= 17) {
+
+}
+else {
+   console.log("It's a bit cold.");
+}
+if(20%3==0){
+  console.log('Yessss')
+};
+if(false){
+  console.log('print something')
+}else{
+  console.log(false)
+}
+
+  document.write("Hello, world!");
+
+  </script>
+</body>
+</html>

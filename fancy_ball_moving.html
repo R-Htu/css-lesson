@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color: grey;
+            border: 1px solid black;
+            border-radius: 8px;
+            position:relative;
+
+        }
+        .ball{
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background-color: pink;
+            border-radius: 50%;
+            animation: move 3s ease-in-out infinite;
+            bottom: 10px;
+            left: 0;
+        }
+        @keyframes move {
+            0%,100%{
+                bottom:0;
+                left: 0;
+                transform: scale(1);
+           
+            }
+            25%{
+                bottom: 200px;
+                transform: scale(1.1);
+            }
+            50%{
+                bottom: 0;
+                left: 100%;
+                transform: translateX(-100%) scale(1);
+
+            }
+            75%{
+                bottom: 200px;
+                transform: translateX(-100%) scale(1.1);
+
+            }
+            100%{
+                bottom:0;
+                left: 0;
+                transform: scale(1);
+           
+            }
+        }
+        .shadow{
+            width: 60px;
+            height: 10px;
+            background-color: rgb(103, 89, 89);
+            border-radius: 50%;
+            animation: shadowMove 3s ease-in-out infinite;
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+        }
+        @keyframes shadowMove {
+            0%,100%{
+                left: 0;
+                transform: scale(1);
+            }
+            25%{
+                transform: scale(0.6);
+            }
+            50%{
+                left: 100%;
+                transform:translateX(-100%) scale(1);
+            }
+            75%{
+                transform:translateX(-100%) scale(0.6);
+            }
+            
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="ball"></div>
+        <div class="shadow"></div>
+    
+    </div>
+</body>
+</html>
